@@ -17,8 +17,12 @@
             <td>{{$user->tel}}</td>
             <td>{{$user->password}}</td>
         </tr>
+
     @endforeach
     </table>
+    <br>
+    <br>
+    <p>こちらでお間違えないですか？</p>
 @endsection
 
 @section('footer')

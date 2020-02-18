@@ -11,7 +11,7 @@ class LoginController extends Controller
     {
         return view('login.login');
     }
-    public function top()
+    public function top(Request $request)
     {
         return view('top.top');
     }
