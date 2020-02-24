@@ -8,9 +8,9 @@
 @endsection
 
 @section('content')
-    <p>{{$msg}}</p>
+    <p>{{ $msg }}</p>
     @if (count($errors) > 0)
-        <p>入力に問題があります。再入力してください。</p>
+        <p>⚠️入力に誤りがあります。再入力してください。</p>
     @endif
 
     <form action="/login/add/check" method="post">

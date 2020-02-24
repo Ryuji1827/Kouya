@@ -5,36 +5,39 @@ namespace App\Http\Controllers;
 use App\UserLogin;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserLoginRequest;
+use Illuminate\Support\Facades\DB;
 
 class UserLoginController extends Controller
 {
-    public function post(Request $request)
+    // 新規作成画面を表示させる。
+    public function show()
     {
-       return view('login.checkUser', ['msg' => 'こちらでお間違えないですか？']);
+        $data = ['msg' => '👇あなた様の情報を入力👇'];
+        return view('login.addUser', $data);
     }
-    public function add(Request $request)
+    // フォームリクエストによるvalidation
+    // 次のcheckUserに配列をformで渡してあげる
+    public function add(UserLoginRequest $request)
     {
-        return view('login.addUser', ['msg' => '👇あなた様の情報を入力👇']);
+        $user = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'tel' => $request->tel,
+            'pass1' => $request->pass1,
+        ];
+        return view('login.checkUser', ['user' => $user]);
     }
+
+    // /addからのデータをそのままデータベースに登録
     public function create(Request $request)
     {
-        $this->validate($request, UserLogin::$rules);
-        $user_login = new UserLogin;
-        $form = $request->all();
-        unset($form['_token']);
-        $user_login->fill($form)->save();
-        return redirect('/check');
-    }
-    
-    public function messages()
-    {
-        return [
-            'name.required' => '名前は必ず入力してください。',
-            'mail.email' => 'メールアドレスが必要です。',
-            'tel.integer' => '整数で入力してください。',
-            'tel.digits:11' => 'ハイフンなしの11桁で入力してください。',
-            'pass1.password' => 'パスワードを入力してください。',
-            'pass2.password' => '上記と同じものを入力してください。',
-        ];
+        $param = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'tel' => $request->tel,
+            'pass1' => $request->pass1,
+        ];    
+        $user_create = DB::insert('insert into login_user (name, mail, tel, password) values (name, mail, tel, pass1)', $param);
+        return redirect('/login');
     }
 }

@@ -8,21 +8,60 @@
 @endsection
 
 @section('content')
-    <table>
-    <tr><th>Name</th><th>Mail</th><th>Tel</th><th>Password</th></tr>
-    @foreach ($users as $user)
-        <tr>
-            <td>{{$user->name}}</td>
-            <td>{{$user->mail}}</td>
-            <td>{{$user->tel}}</td>
-            <td>{{$user->password}}</td>
-        </tr>
+<style type="text/css">
 
-    @endforeach
+table{
+  width: 100%;
+}
+
+table th{
+  position: relative;
+  text-align: left;
+  width: 15%;
+}
+
+table th:after{
+  display: block;
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top:calc(50% - 1px);
+  right:20px;
+}
+
+table td{
+  text-align: left;
+  width: 85%;
+}
+
+</style>
+  <form action="/login" method="post">
+    <table>
+        <tr>
+            <th>名前</th>
+            <td>{{$user['name']}}</td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td>{{$user['mail']}}</td>
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <td>{{$user['tel']}}</td>
+        </tr>
+        <tr>
+            <th>パスワード</th>
+            <td>{{$user['pass1']}}</td>
+        </tr>
     </table>
+  </form>
     <br>
     <br>
     <p>こちらでお間違えないですか？</p>
+    <input type="submit"  value="確定">
+    <input type="button" onclick="location.href='http://localhost:8000/login/add'" value="修正"></button>
 @endsection
 
 @section('footer')

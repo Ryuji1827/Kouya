@@ -7,33 +7,22 @@ use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
+    //ログイン画面を表示するだけのメソッド
     public function login()
     {
         return view('login.login');
     }
+
+    //ID&PASSをもとにTOPページに送るメソッド
     public function top(Request $request)
     {
         return view('top.top');
     }
-    public function index(Request $request)
-    {
-        $users = DB::select('select * from login_user');
-        return view('login.login_check', ['users' => $users]);
-    }
+
+    /* DBに追加するメソッドやけど移動予定
+    
     public function add(Request $request)
     {
         return view('login.add');
-    }
-    public function create(Request $request)
-    {
-        $param = [
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'tel' => $request->tel,
-            'pass1' => $request->pass1,
-            'pass2' =>$request->pass2,
-        ];
-        DB::table('login_user')->insert($param);
-        return redirect('/check');
-    }
+    } */
 }

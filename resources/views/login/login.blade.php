@@ -15,6 +15,7 @@
         <br>
         <br>
     </form>
+    <p>アカウントをお持ちでない方は、新規作成ページボタンをクッリク！</p>
     <input type="button" onclick="location.href='http://localhost:8000/login/add'" value="新規作成ページ"></button>
 </body>
 </html>
