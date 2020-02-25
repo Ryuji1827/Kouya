@@ -18,11 +18,4 @@ class LoginController extends Controller
     {
         return view('top.top');
     }
-
-    /* DBに追加するメソッドやけど移動予定
-    
-    public function add(Request $request)
-    {
-        return view('login.add');
-    } */
 }

@@ -37,31 +37,32 @@ table td{
 }
 
 </style>
-  <form action="/login" method="post">
+  <form action="/login/add/check/create" method="post">
     <table>
-        <tr>
-            <th>名前</th>
-            <td>{{$user['name']}}</td>
-        </tr>
-        <tr>
-            <th>メールアドレス</th>
-            <td>{{$user['mail']}}</td>
-        </tr>
-        <tr>
-            <th>電話番号</th>
-            <td>{{$user['tel']}}</td>
-        </tr>
-        <tr>
-            <th>パスワード</th>
-            <td>{{$user['pass1']}}</td>
-        </tr>
+    @csrf
+      <tr>
+          <th>名前</th>
+          <td>{{$user['name']}}</td>
+      </tr>
+      <tr>
+          <th>メールアドレス</th>
+          <td>{{$user['mail']}}</td>
+      </tr>
+      <tr>
+          <th>電話番号</th>
+          <td>{{$user['tel']}}</td>
+      </tr>
+      <tr>
+          <th>パスワード</th>
+          <td>{{$user['pass1']}}</td>
+      </tr>
     </table>
-  </form>
     <br>
     <br>
     <p>こちらでお間違えないですか？</p>
     <input type="submit"  value="確定">
     <input type="button" onclick="location.href='http://localhost:8000/login/add'" value="修正"></button>
+    </form>
 @endsection
 
 @section('footer')

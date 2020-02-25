@@ -15,4 +15,4 @@ Route::get('/login', 'LoginController@login');
 Route::post('login/top', 'LoginController@top');
 Route::get('login/add', 'UserLoginController@show');
 Route::post('login/add/check', 'UserLoginController@add');
-Route::post('login/add/check', 'UserLoginController@create');
+Route::post('login/add/check/create', 'UserLoginController@create');
