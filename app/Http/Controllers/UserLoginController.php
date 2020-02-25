@@ -37,7 +37,7 @@ class UserLoginController extends Controller
             'tel' => $request->tel,
             'pass1' => $request->pass1,
         ];    
-        $user_create = DB::insert('insert into login_user (name, mail, tel, password) values (name, mail, tel, pass1)', $param);
+        DB::insert('insert into login_user (name, mail, tel, password) values (:name, :mail, :tel, :pass1)', $param);
         return redirect('/login');
     }
 }
