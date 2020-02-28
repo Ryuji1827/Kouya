@@ -8,10 +8,12 @@ class UserLoginRequest extends FormRequest
 {
     public function authorize()
     {
-        if ($this->path() == 'login/add/check')
+        if ($this->path() == 'login/add/check' || 'login/add/check/create')
         {
             return true;
-        } else {
+        } 
+        else 
+        {
             return false;
         }
     }

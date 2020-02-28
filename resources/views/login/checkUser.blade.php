@@ -43,18 +43,22 @@ table td{
       <tr>
           <th>名前</th>
           <td>{{$user['name']}}</td>
+          <input type="hidden" name="name" value="{{$user['name']}}">
       </tr>
       <tr>
           <th>メールアドレス</th>
           <td>{{$user['mail']}}</td>
+          <input type="hidden" name="mail" value="{{$user['mail']}}">
       </tr>
       <tr>
           <th>電話番号</th>
           <td>{{$user['tel']}}</td>
+          <input type="hidden" name="tel" value="{{$user['tel']}}">
       </tr>
       <tr>
           <th>パスワード</th>
           <td>{{$user['pass1']}}</td>
+          <input type="hidden" name="pass1" value="{{$user['pass1']}}">
       </tr>
     </table>
     <br>
