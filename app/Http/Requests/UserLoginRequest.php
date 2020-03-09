@@ -22,7 +22,7 @@ class UserLoginRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'mail' => 'required|email',
+            'email' => 'required|email',
             'tel' => 'required|numeric|digits:11',
             'pass1' => 'required',
             'pass2' => 'same:pass1',
@@ -33,8 +33,8 @@ class UserLoginRequest extends FormRequest
     {
         return [
             'name.required' => '入力必須事項です。',
-            'mail.email' => 'メールアドレスが必要です。',
-            'mail.required' => '入力必須事項です。',
+            'email.email' => 'メールアドレスが必要です。',
+            'email.required' => '入力必須事項です。',
             'tel.numeric' => '数値で入力してください。',
             'tel.digits' => 'ハイフンなしの11桁で入力してください。',
             'tel.required' => '入力必須事項です。',

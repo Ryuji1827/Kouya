@@ -6,7 +6,7 @@
       </tr>
       <tr>
           <th>メールアドレス</th>
-          <td>{{$param['mail']}}</td>
+          <td>{{$param['email']}}</td>
       </tr>
       <tr>
           <th>電話番号</th>

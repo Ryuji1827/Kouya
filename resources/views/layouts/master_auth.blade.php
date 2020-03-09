@@ -1,7 +1,11 @@
-@extends('layouts.kouyaapp')
-
-@section('title','荒野行動リーグ戦　WEBサイト')
-
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <title>@yield('title')</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <style>
   ul {
   background: whitesmoke;
@@ -28,23 +32,7 @@ ul li:last-of-type {
   border-bottom: none;/*最後の線だけ消す*/
 }
 </style>
+<body>
 
-@section('menubar')
-    @parent
-    トップページ
-@endsection
-
-@section('content')
-    @csrf
-    <ul>
-        <li><a href="/top/recruit">リーグ戦を募集する</a></li>
-        <li><a href="/top/entry">リーグ戦参加する</a></li>
-        <li><a href="/top/edit">設定を変更する</a></li>
-    </ul>
-
-    
-@endsection
-
-@section('footer')
-copyright 2020 RE:UG.
-@endsection
+</body>
+</html>

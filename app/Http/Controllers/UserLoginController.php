@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use App\Http\Requests\UserLoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +20,7 @@ class UserLoginController extends Controller
     {
         $user = [
             'name' => $request->name,
-            'mail' => $request->mail,
+            'email' => $request->email,
             'tel' => $request->tel,
             'pass1' => $request->pass1,
         ];
@@ -32,17 +31,18 @@ class UserLoginController extends Controller
     }
 
     // /addからのデータをそのままデータベースに登録
-    public function create(UserLoginRequest $request)
+    // Controllerに直接SQLをぶち込む方法
+    public function create(Request $request)
     {
         $param = [
             'name' => $request->name,
-            'mail' => $request->mail,
+            'email' => $request->email,
             'tel' => $request->tel,
             'pass1' => $request->pass1,
         ];
         // 中の配列を確認するための関数
         // dd($param);
-        DB::insert('insert into login_user (name, mail, tel, password) values (:name, :mail, :tel, :pass1)', $param);
+        DB::insert('insert into users (name, email, tel, password) values (:name, :email, :tel, :pass1)', $param);
         return redirect('/login');
     }
 }

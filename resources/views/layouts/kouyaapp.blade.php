@@ -1,17 +1,48 @@
 <html>
 <head>
     <title>@yield('title')</title>
-    <style>
-    body {font-size:16; color:#000000; margin: 5px }
-    h1 { font-size:50pt; text-align:center; color:#000000; 
-        margin:-20px 0px -30px 0px; letter-spacing:0pt; }
-    ul { font-size:12pt; }
-    hr { margin: 25px 100px; border-top: 1px dashed #ddd; }
-    .menutitle {font-size:14pt; font-weight:bold; margin: 0px; }
-    .content {margin:10px; }
-    .footer { text-align;right; font-size:10pt; margin:10px;
+<style>
+header{
+  margin-top: 30px;
+  color: #43A047;
+}
+hr{
+  border-width: 3px;
+  border-color: #43A047;
+}
+h1{
+  font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+  text-align: center;
+}
+.align-light{
+    text-align: right;
+}
+.form-group{
+  margin-bottom: 35px;
+}
+footer p{
+  text-align: center;
+}
+input:required{
+  background: #ffcdd2;
+}
+input[type="email"]:invalid{
+  background: #ffcdd2;
+}
+input:valid{
+  background: transparent;
+}
+input:focus{
+  background: #DCEDC8;
+}
+
+.menutitle {font-size:14pt; font-weight:bold; margin: 0px; }
+.content {margin:10px; }
+.footer { text-align;right; font-size:10pt; margin:10px;
         border-bottom:solid 1px #ccc; color:#ccc; }
-    </style>
+</style>
 </head>
 <body>
     <h1>@yield('title')</h1>

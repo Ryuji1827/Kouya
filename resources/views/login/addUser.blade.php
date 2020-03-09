@@ -21,11 +21,11 @@
             <td>{{$message}}</td></tr>
         @enderror
         <tr><th>名前: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
-        @error('mail')
+        @error('email')
             <tr><th>ERROR</th>
             <td>{{$message}}</td></tr>
         @enderror
-        <tr><th>メールアドレス: </th><td><input type="text" name="mail" value="{{old('mail')}}"></td></tr>
+        <tr><th>メールアドレス: </th><td><input type="text" name="email" value="{{old('email')}}"></td></tr>
         @error('tel')
             <tr><th>ERROR</th>
             <td>{{$message}}</td></tr>

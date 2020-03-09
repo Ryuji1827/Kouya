@@ -8,7 +8,7 @@
     <h1>荒野行動募集サイト</h1>
     <form action="login/top" method="POST">
     @csrf
-        <p>ID: <input type="text" name="login_id"></p>
+        <p>ID: 　　  <input type="text" name="login_id"></p>
         <p>PASSWORD: <input type="text" name="login_pass"></p>
         <input type="submit">
         <br>

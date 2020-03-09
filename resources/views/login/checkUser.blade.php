@@ -47,8 +47,8 @@ table td{
       </tr>
       <tr>
           <th>メールアドレス</th>
-          <td>{{$user['mail']}}</td>
-          <input type="hidden" name="mail" value="{{$user['mail']}}">
+          <td>{{$user['email']}}</td>
+          <input type="hidden" name="email" value="{{$user['email']}}">
       </tr>
       <tr>
           <th>電話番号</th>
