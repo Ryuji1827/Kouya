@@ -29,4 +29,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/top', 'LoginController@top');
 Route::get('/top/recruit', 'MainController@recruit');
-Route::post('top/recruit/recruit_conform', 'MainController@recruit_conform');
+Route::post('/top/recruit/recruit_conform', 'MainController@recruit_conform');
+Route::post('/top/recruit/recruit_conform/recruit_create', 'MainController@recruit_create');

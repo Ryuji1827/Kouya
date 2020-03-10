@@ -46,7 +46,6 @@ input:focus{
 </style>
 
 @section('content')
-    @csrf
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <div class="container">
         <header>
@@ -59,7 +58,8 @@ input:focus{
     <hr>
     
     <div class="container">
-        <form action="top/recruit/recruit_conform" method="post">
+        <form action="/top/recruit/recruit_conform" method="post">
+        @csrf
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="form-group">
                     <label for="name"><span class="label label-danger"></span>主催者様のお名前</label>
@@ -82,13 +82,13 @@ input:focus{
                     <label for="when"><span class="label label-success"></span>開催日</label>
                     <select id="when" name="when" class="form-control">
                        <option value="">選択してください</option>
-                        <option value="Mon">月</option>
-                        <option value="Tsu">火</option>
-                        <option value="Wed">水</option>
-                        <option value="Thu">木</option>
-                        <option value="Fri">金</option>
-                        <option value="Sat">土</option>
-                        <option value="Sun">日</option>
+                        <option value="月">月</option>
+                        <option value="火">火</option>
+                        <option value="水">水</option>
+                        <option value="木">木</option>
+                        <option value="金">金</option>
+                        <option value="土">土</option>
+                        <option value="日">日</option>
                     </select>
                 </div>
 
@@ -122,22 +122,22 @@ input:focus{
                     <label for="level"><span class="label label-success"></span>参加希望レベル</label>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="q1_html" name="q1" value="デザイン">初心者
+                            <input type="checkbox" id="beginner" name="level" value="初心者">初心者
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="q1_html" name="q1" value="プログラミング">中級者
+                            <input type="checkbox" id="intermediate" name="level" value="中級者">中級者
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="q1_html" name="q1" value="マーケティング">猛者
+                            <input type="checkbox" id="advanced" name="level" value="猛者">猛者
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="q1_html" name="q1" value="バナナ">レベル不問
+                            <input type="checkbox" id="anyone" name="level" value="レベル不問">レベル不問
                         </label>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ input:focus{
 
                 <div class="form-group">
                 <label for="message"><span class="label label-success"></span>その他（ルール等の詳細など、必要なことを書いてください）</label>
-                    <textarea class="form-control" rows="5"></textarea>
+                    <textarea class="form-control" name = "message" rows="5"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">送信する</button>

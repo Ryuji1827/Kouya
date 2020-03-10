@@ -35,6 +35,10 @@ ul li:last-of-type {
 @endsection
 
 @section('content')
+    @if (isset($msg))
+      <p>{{ $msg }}</p>
+    @endif
+
     @csrf
     <ul>
         <li><a href="/top/recruit">リーグ戦を募集する</a></li>

@@ -37,10 +37,11 @@ table td{
 </style>
 
 @section('content')
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <form action="top/recruit/recruit_conform/recruit_create" method="post">
-    <table>
+    <form action="/top/recruit/recruit_conform/recruit_create" method="post">
     @csrf
+    <table>
       <tr>
           <th>主催者名</th>
           <td>{{$param['name']}}</td>
@@ -64,7 +65,7 @@ table td{
       <tr>
           <th>開催日</th>
           <td>{{$param['when']}}</td>
-          <input type="hidden" name="" value="{{$param['when']}}">
+          <input type="hidden" name="when" value="{{$param['when']}}">
       </tr>
       <tr>
           <th>開催時間</th>

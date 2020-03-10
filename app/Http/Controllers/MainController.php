@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Participant;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -12,6 +13,7 @@ class MainController extends Controller
         return view('main.recruit');
     }
 
+    // 募集ページの内容を確認用として、再表示する
     public function recruit_conform(Request $request)
     {
         $param = [
@@ -28,5 +30,16 @@ class MainController extends Controller
             'message' => $request->message,
         ];
         return view('main.recruit_conform',['param' => $param]);
+    }
+
+    // recruit_conformのパラメータをDBに登録する
+    public function recruit_create(Request $request)
+    {
+        $participant = new Participant;
+        $form = $request->all();
+        unset($form['_token']);
+        $participant->fill($form)->save();
+        $msg = '募集内容を投稿しました。';
+        return redirect('/top', ['msg' => $msg]);
     }
 }
