@@ -63,24 +63,24 @@ input:focus{
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="form-group">
                     <label for="name"><span class="label label-danger"></span>主催者様のお名前</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="例：こんにちは太郎" autofocus required>
+                    <input type="text" id="name" name="name" value="{{old('name')}}" class="form-control" placeholder="例：こんにちは太郎" autofocus required>
                 </div>
                 <div class="form-group">
                     <label for="league"><span class="label label-danger"></span>リーグ戦名</label>
-                    <input type="text" id="league" name="league" class="form-control" placeholder="例：KWL（Knives out Wednesday League）" autofocus required>
+                    <input type="text" id="league" name="league" value="{{old('league')}}" class="form-control" placeholder="例：KWL（Knives out Wednesday League）" autofocus required>
                 </div>
                 <div class="form-group">
                     <label for="email"><span class="label label-danger"></span>メールアドレス</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="例：hello@tarouchann.com" required>
+                    <input type="email" id="email" name="email" value="{{old('email')}}" class="form-control" placeholder="例：hello@tarouchann.com" required>
                 </div>
                 <div class="form-group">
                     <label for="tel"><span class="label label-danger"></span>電話番号</label>
-                    <input type="tel" id="tel" name="tel" class="form-control" placeholder="例：080-1234-5678" required>
+                    <input type="tel" id="tel" name="tel" value="{{old('tel')}}" class="form-control" placeholder="例：080-1234-5678" required>
                 </div>
 
                 <div class="form-group">
                     <label for="when"><span class="label label-success"></span>開催日</label>
-                    <select id="when" name="when" class="form-control">
+                    <select id="when" name="when" value="{{old('when')}}" class="form-control">
                        <option value="">選択してください</option>
                         <option value="月">月</option>
                         <option value="火">火</option>
@@ -94,12 +94,12 @@ input:focus{
 
                 <div class="form-group">
                     <label for="time"><span class="label label-danger"></span>開催時間</label>
-                    <input type="text" id="time" name="time" class="form-control" placeholder="例：20:00 ~ 21:00" autofocus required>
+                    <input type="text" id="time" name="time" value="{{old('time')}}" class="form-control" placeholder="例：20:00 ~ 21:00" autofocus required>
                 </div>
                 
                 <div class="form-group">
                     <label for="howMany"><span class="label label-success"></span>戦闘形態</label>
-                    <select id="howMany" name="howMany" class="form-control">
+                    <select id="howMany" name="howMany" value="{{old('howMany')}}" class="form-control">
                        <option value="">選択してください</option>
                         <option value="デュオ">デュオ</option>
                         <option value="スクワッド">スクワッド</option>
@@ -109,17 +109,17 @@ input:focus{
 
                 <div class="form-group">
                     <label for="map"><span class="label label-success"></span>マップ</label>
-                    <select id="map" name="map" class="form-control">
+                    <select id="map" name="map" value="{{old('map')}}" class="form-control">
                        <option value="">選択してください</option>
-                        <option value="デュオ">平原野原</option>
-                        <option value="スクワッド">嵐の半島</option>
-                        <option value="クインテッド">東京</option>
+                        <option value="平原野原">平原野原</option>
+                        <option value="嵐の半島">嵐の半島</option>
+                        <option value="東京">東京</option>
                         <option value="ランダム">ランダム</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="level"><span class="label label-success"></span>参加希望レベル</label>
+                    <label for="level"><span class="label label-success" value="{{old('level')}}"></span>参加希望レベル</label>
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" id="beginner" name="level" value="初心者">初心者
@@ -144,7 +144,7 @@ input:focus{
 
                 <div class="form-group">
                 <label for="money"><span class="label label-success"></span>賞金の有無</label>
-                    <select id="money" name="money" class="form-control">
+                    <select id="money" name="money" value="{{old('money')}}" class="form-control">
                        <option value="">選択してください</option>
                         <option value="有り">有</option>
                         <option value="無し">無</option>
@@ -153,7 +153,7 @@ input:focus{
 
                 <div class="form-group">
                 <label for="message"><span class="label label-success"></span>その他（ルール等の詳細など、必要なことを書いてください）</label>
-                    <textarea class="form-control" name = "message" rows="5"></textarea>
+                    <textarea class="form-control" name = "message" value="{{old('message')}}" rows="5"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">送信する</button>

@@ -102,7 +102,7 @@ table td{
     <br>
     <p>こちらでお間違えないですか？</p>
     <input type="submit"  value="確定">
-    <input type="button" value="修正"></button>
+    <input type="button" onclick="history.back()" value="修正"></button>
     </form>
 @endsection
 

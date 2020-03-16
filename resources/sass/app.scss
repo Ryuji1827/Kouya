@@ -6,3 +6,88 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    h1 {
+        font-size: 37px;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+    }
+}
+header {
+    margin-top: 30px;
+    color: #43A047;
+}
+
+hr {
+    border-width: 3px;
+    border-color: #43A047;
+}
+
+.content {
+    .haikei {
+        background-image: url(/images/Kouya_top.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.7;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .nakami {
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            font-family: "Yu Gothic";
+        }
+        a {
+            color:#ff0;
+            text-decoration:underline;
+            &:hover {
+                color:#999;
+                text-decoration:underline;
+            }
+        }
+    }          
+}
+
+.align-light{
+      text-align: right;
+}
+
+.form-group{
+    margin-bottom: 35px;
+}
+
+footer p{
+    text-align: center;
+}
+
+input:required{
+    background: #ffcdd2;
+}
+
+input[type="email"]:invalid{
+    background: #ffcdd2;
+}
+
+input:valid{
+    background: transparent;
+}
+
+input:focus{
+    background: #DCEDC8;
+}
+  
+.menutitle {
+    font-size:14pt; font-weight:bold; margin: 0px;
+}
+
+.footer { 
+    text-align:right; font-size:10pt; margin:10px;
+    border-bottom:solid 1px #ccc; color:#ccc;
+}

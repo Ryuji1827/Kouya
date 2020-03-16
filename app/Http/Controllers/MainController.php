@@ -40,6 +40,20 @@ class MainController extends Controller
         unset($form['_token']);
         $participant->fill($form)->save();
         $msg = '募集内容を投稿しました。';
-        return redirect('/top', ['msg' => $msg]);
+        return redirect()->route('to_the_top', ['msg' => $msg]);
+    }
+
+    // entryのページを表示する
+    public function entry()
+    {
+        $items = Participant::orderBy('created_at', 'desc')->paginate(5);
+        return view('main.entry', ['items' => $items]);
+    }
+
+    // entry_detailのページを表示する
+    public function detail($id)
+    {
+        $param = Participant::find($id);
+        return view('main.entry_detail', ['param' => $param]);
     }
 }
