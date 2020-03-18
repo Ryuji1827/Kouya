@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Participant;
 use Illuminate\Http\Request;
+use App\Mail\KouyaConform;
+use Illuminate\Support\Facades\Mail;
+
 
 class MainController extends Controller
 {
@@ -55,5 +58,26 @@ class MainController extends Controller
     {
         $param = Participant::find($id);
         return view('main.entry_detail', ['param' => $param]);
+    }
+
+    public function mail(Request $request)
+    {
+        $mail_name = $request->session()->get('name');;
+        $mail_text = $mail_name.' 様から下記の内容について参加希望があります。';
+        $data = [
+            'name' => $request->name,
+            'league' => $request->league,
+            'when' => $request->when,
+            'time' => $request->time,
+            'howMany' => $request->howMany,
+            'map' => $request->map,
+            'level' => $request->level,
+            'money' => $request->money,
+            'message' => $request->message,
+        ];
+        #dd($data);
+        $mail_to = $request->email;
+        Mail::to($mail_to)->send(new KouyaConform($mail_name, $mail_text, $data));
+        return view('mail.mail_done');
     }
 }

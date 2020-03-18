@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Accessory
+@import 'accessory';
+
 body {
     h1 {
         font-size: 37px;
@@ -44,6 +47,15 @@ hr {
             text-align: center;
             font-family: "Yu Gothic";
         }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            font-family: "Yu Gothic";
+        }
+        
         a {
             color:#ff0;
             text-decoration:underline;
@@ -91,3 +103,4 @@ input:focus{
     text-align:right; font-size:10pt; margin:10px;
     border-bottom:solid 1px #ccc; color:#ccc;
 }
+

@@ -9,21 +9,27 @@
 @endsection
 
 @section('content')
-    <table>
-        <tr><th>Name</th><th>League</th><th>Day</th><th>Time</th><th>How</th><th>Level</th><th>Money</th></tr>
-        @foreach ($items as $item)
-            <tr>
-                <td>{{$item->name}}</td>
-                <td>{{$item->league}}</td>
-                <td>{{$item->when}}</td>
-                <td>{{$item->time}}</td>
-                <td>{{$item->howMany}}</td>
-                <td>{{$item->level}}</td>
-                <td>{{$item->money}}</td>
-                <td><button type="button" onclick="location.href='http://localhost:8000/top/entry/{{$item->id}}'">詳細</button></td>
-            </tr>
-        @endforeach
-    </table>
+    <div class="nakami">
+        <h1>リーグ戦状況</h1>
+        <table>
+            <tr><th>Name</th><th>League</th><th>Day</th><th>Time</th><th>How</th><th>Level</th><th>Money</th></tr>
+            @foreach ($items as $item)
+                <tr>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->league}}</td>
+                    <td>{{$item->when}}</td>
+                    <td>{{$item->time}}</td>
+                    <td>{{$item->howMany}}</td>
+                    <td>{{$item->level}}</td>
+                    <td>{{$item->money}}</td>
+                    <td><button type="button" class="btn-push" onclick="location.href='http://localhost:8000/top/entry/{{$item->id}}'">詳細</button></td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+    <div class="nakami">
+        <h2>荒野NEWS</h2>
+
     {{ $items->links() }}
 @endsection
 
