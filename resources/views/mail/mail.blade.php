@@ -30,17 +30,15 @@
         <p>~荒野行動WEBサイトより~</p></br>
         <p>--------------------------</p>
         <table>
-        @foreach ($data as $values)
-            <td>{{$values['name']}}</td>
-            <td>{{$values['league']}}</td>
-            <td>{{$values['when']}}</td>
-            <td>{{$values['time']}}</td>
-            <td>{{$values['howMany']}}</td>
-            <td>{{$values['map']}}</td>
-            <td>{{$values['level']}}</td>
-            <td>{{$values['money']}}</td>
-            <td>{{$values['message']}}</td>
-        @endforeach
+            <td>{{$data->name}}</td>
+            <td>{{$data->league}}</td>
+            <td>{{$data->when}}</td>
+            <td>{{$data->time}}</td>
+            <td>{{$data->howMany}}</td>
+            <td>{{$data->map}}</td>
+            <td>{{$data->level}}</td>
+            <td>{{$data->money}}</td>
+            <td>{{$data->message}}</td>
         </table>
         </br>
         <p>上記の内容についてリクエストがありました。参加可・不可をお伝えの上、メールに返信してください。</p>

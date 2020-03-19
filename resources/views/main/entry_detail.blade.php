@@ -26,7 +26,7 @@
                     <td><input type="hidden" name="level" value="{{$param->level}}">{{$param->level}}</td>
                     <td><input type="hidden" name="money" value="{{$param->money}}">{{$param->money}}</td>
                     <td><input type="hidden" name="message" value="{{$param->message}}">{{$param->message}}</td>
-                    <td><input type="hidden" name="email" value="$param->email"></td>
+                    <td><input type="hidden" name="email" value="{{$param->email}}"></td>
                 </tr>
             </table>
             <input type="submit" value="参加する">

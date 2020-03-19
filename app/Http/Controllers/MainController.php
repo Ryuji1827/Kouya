@@ -58,7 +58,7 @@ class MainController extends Controller
     {
         $param = Participant::find($id);
         return view('main.entry_detail', ['param' => $param]);
-    }
+    }   
 
     public function mail(Request $request)
     {
@@ -67,6 +67,7 @@ class MainController extends Controller
         $data = [
             'name' => $request->name,
             'league' => $request->league,
+            'email' => $request->email,
             'when' => $request->when,
             'time' => $request->time,
             'howMany' => $request->howMany,
