@@ -9965,24 +9965,44 @@ h3 {
   border-bottom: none;
 }
 
-table {
+.recruit_conform table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 }
-
-table tr {
+.recruit_conform table tr {
   border-bottom: solid 1px #eee;
   cursor: pointer;
 }
-
-table tr:hover {
+.recruit_conform table tr:hover {
   background-color: #d4f0fd;
 }
-
-table th, table td {
+.recruit_conform table th, .recruit_conform table td {
   text-align: center;
   width: 5%;
+}
+
+.conform table {
+  width: 100%;
+}
+.conform table th {
+  position: relative;
+  text-align: left;
+  width: 15%;
+}
+.conform table th:after {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: -60px;
+}
+.conform table td {
+  text-align: left;
+  width: 105%;
 }
 
 body h1 {
@@ -10003,7 +10023,7 @@ hr {
 }
 
 .content .haikei {
-  background-image: url(/images/Kouya_top.jpg);
+  background-image: url(/images/Kouya_top2.png);
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.7;
@@ -10027,7 +10047,7 @@ hr {
   font-family: "Yu Gothic";
 }
 .content .nakami a {
-  color: #ff0;
+  color: #174e28;
   text-decoration: underline;
 }
 .content .nakami a:hover {

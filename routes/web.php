@@ -34,3 +34,6 @@ Route::post('/top/recruit/recruit_conform/recruit_create', 'MainController@recru
 Route::get('/top/entry', 'MainController@entry');
 Route::get('/top/entry/{id}', 'MainController@detail');
 Route::post('/top/entry/{id}/mail', 'MainController@mail');
+Route::get('/top/edit', 'MainController@profile');
+Route::post('/top/edit/edit_conform', 'MainController@profile_conform');
+Route::post('/top/edit/edit_conform/edit_done', 'MainController@profile_done');

@@ -13,10 +13,12 @@
     border-bottom: 4px solid #d37800;
   }
   
-  .btn-push:active {
-      transform: translateY(4px);
-      border-bottom: none;
+.btn-push:active {
+    transform: translateY(4px);
+    border-bottom: none;
   }
+
+.recruit_conform{
 
   table{
     border-collapse: collapse;
@@ -37,3 +39,33 @@
     text-align: center;
     width: 5%;
   }
+}
+
+.conform {
+
+  table { 
+    width: 100%;
+  }
+      
+  table th{
+    position: relative;
+    text-align: left;
+    width: 15%;
+  }
+      
+  table th:after{
+    display: block;
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    top:calc(50% - 1px);
+    right:-60px;
+  }
+      
+  table td{
+    text-align: left;
+    width: 105%;
+  }
+}

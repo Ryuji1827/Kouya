@@ -20,7 +20,7 @@
         <ul>
           <li><a href="/top/recruit">リーグ戦を募集する</a></li>
           <li><a href="/top/entry">リーグ戦参加する</a></li>
-          <li><a href="/top/edit">設定を変更する</a></li>
+          <li><a href="/top/edit">アカウントの編集</a></li>
         </ul>
       </div>
 

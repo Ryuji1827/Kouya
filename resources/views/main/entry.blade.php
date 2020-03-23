@@ -29,6 +29,7 @@
     </div>
     <div class="nakami">
         <h2>荒野NEWS</h2>
+        
 
     {{ $items->links() }}
 @endsection

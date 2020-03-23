@@ -16,13 +16,13 @@ table{
 table th{
   position: relative;
   text-align: left;
-  width: 15%;
+  width: 20%;
 }
 
 table th:after{
   display: block;
   content: "";
-  width: 30px;
+  width: 40px;
   height: 2px;
   background-color: #333;
   position: absolute;
@@ -38,7 +38,7 @@ table td{
 
 @section('content')
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <form action="/top/recruit/recruit_conform/recruit_create" method="post">
     @csrf
     <table>
@@ -102,7 +102,7 @@ table td{
     <br>
     <p>こちらでお間違えないですか？</p>
     <input type="submit"  value="確定">
-    <input type="button" onclick="history.back()" value="修正"></button>
+    <input type="button" onclick="history.back()" value="修正">
     </form>
 @endsection
 

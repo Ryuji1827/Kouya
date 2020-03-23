@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Input;
 use App\Participant;
 use Illuminate\Http\Request;
 use App\Mail\KouyaConform;
@@ -43,7 +45,7 @@ class MainController extends Controller
         unset($form['_token']);
         $participant->fill($form)->save();
         $msg = '募集内容を投稿しました。';
-        return redirect()->route('to_the_top', ['msg' => $msg]);
+        return redirect()->route('to_the_top', compact($msg));
     }
 
     // entryのページを表示する
@@ -58,27 +60,49 @@ class MainController extends Controller
     {
         $param = Participant::find($id);
         return view('main.entry_detail', ['param' => $param]);
-    }   
+    }       
 
+    // 参加希望が確定されるとともに、メールを送信する
     public function mail(Request $request)
     {
         $mail_name = $request->session()->get('name');;
         $mail_text = $mail_name.' 様から下記の内容について参加希望があります。';
-        $data = [
-            'name' => $request->name,
-            'league' => $request->league,
-            'email' => $request->email,
-            'when' => $request->when,
-            'time' => $request->time,
-            'howMany' => $request->howMany,
-            'map' => $request->map,
-            'level' => $request->level,
-            'money' => $request->money,
-            'message' => $request->message,
-        ];
+        $data = $request->all();
         #dd($data);
         $mail_to = $request->email;
         Mail::to($mail_to)->send(new KouyaConform($mail_name, $mail_text, $data));
         return view('mail.mail_done');
+    }
+
+    // プロフィールをまだ作成していない人向けに作成画面を表示させる
+    public function profile(Request $request)
+    {
+        if (User::where('profile_id', '=', Input::get('profile_id'))->exists()) 
+        {
+            return view('main.edit');
+        }
+         else
+         {
+            return view('main.real_edit');
+         }
+        
+    }
+
+    // プロフィール作成画面の確認用
+    public function profile_conform(Request $request)
+    {
+        $param = $request->all();
+        #dd($param);
+        return view('main.edit_conform', ['param' => $param]);
+    }
+
+    public function profile_done(Request $request)
+    {
+        $profile = new Profile;
+        $form = $request->all();
+        unset($form['_token']);
+        $profile->fill($form)->save();
+        $msg = 'アカウントの設定が終わりました。';
+        return redirect()->route('to_the_top', compact($msg));
     }
 }

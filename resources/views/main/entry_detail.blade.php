@@ -30,7 +30,7 @@
                 </tr>
             </table>
             <input type="submit" value="参加する">
-            <button type="button" onclick>
+            <input type="button" onclick="history.back()" value="戻る">
             </form>
             
                 
